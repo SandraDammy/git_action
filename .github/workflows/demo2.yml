@@ -5,6 +5,22 @@ on:
       - Dev
 jobs:
   lint:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-      
+      - name: Get Code
+        uses: action/checkout@v3
+      - name: Install Dependencies
+        run: npm ci
+      -name: Lint Code
+        run: npm run lint
+  test: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: action/checkout@v3
+      - name: Install Dependencies
+        run: npm ci
+      - name: Test code
+        run: npm run test
+
+
