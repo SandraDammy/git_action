@@ -1,0 +1,10 @@
+name: Deploy website
+on:
+  push:
+    branches:
+      - Dev
+jobs:
+  lint:
+    run-on: ubuntu-latest
+    steps:
+      
